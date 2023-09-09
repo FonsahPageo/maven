@@ -20,7 +20,7 @@ node('built-in')
     {
         mail (
             bcc: '', 
-            body: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}: Check console output at ${env.BUILD_URL} to view the results. This is an auto-generated email. Do not reply.",
+            body: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} -${currentBuild.result}: Check console output at ${env.BUILD_URL} to view the results. This is an auto-generated email. Do not reply.",
             cc: '', 
             from: '', 
             replyTo: '', 
