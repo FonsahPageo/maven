@@ -13,6 +13,7 @@
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>Maven Project</name>
+  <!---demo on git-->
   <description>Sample Maven project with a working, deployable site.</description>
   <url>http://www.example.com</url>
 
