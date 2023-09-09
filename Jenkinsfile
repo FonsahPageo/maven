@@ -18,6 +18,14 @@ node('built-in')
     }
     stage("Email Notification")
     {
-        mail bcc: '', body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS: Check console output at $BUILD_URL to view the results. This is an auto generated email. Do not reply.', cc: '', from: '', replyTo: '', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'ashprincepageo@gmail.com'
+        mail (
+            bcc: '', 
+            body: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}: Check console output at ${env.BUILD_URL} to view the results. This is an auto-generated email. Do not reply.",
+            cc: '', 
+            from: '', 
+            replyTo: '', 
+            subject: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}!",
+            to: 'ashprincepageo@gmail.com'
+        )
     }
 }
