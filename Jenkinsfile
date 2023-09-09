@@ -24,7 +24,7 @@ node('built-in')
             cc: '', 
             from: '', 
             replyTo: '', 
-            subject: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}!",
+            subject: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${currentBuild.result}!",
             to: 'ashprincepageo@gmail.com'
         )
     }
