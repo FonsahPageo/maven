@@ -18,6 +18,6 @@ node('built-in')
     }
     stage("Email Notification")
     {
-        mail bcc: '', body: 'Alert for scriptedpipeline job', cc: '', from: '', replyTo: '', subject: 'Scripted pipeline job', to: 'ashprincepageo@gmail.com'
+        mail bcc: '', body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS: Check console output at $BUILD_URL to view the results. This is an auto generated email. Do not reply.', cc: '', from: '', replyTo: '', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'ashprincepageo@gmail.com'
     }
 }
