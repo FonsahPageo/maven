@@ -20,11 +20,11 @@ node('built-in')
     {
         mail (
             bcc: '', 
-            body: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${currentBuild.currentResult}: Check console output at ${env.BUILD_URL} to view the results. This is an auto-generated email. Do not reply.",
+            body: "Working well",
             cc: '', 
             from: '', 
             replyTo: '', 
-            subject: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${currentBuild.currentResult}!",
+            subject: "Jenkins Job Alert",
             to: 'ashprincepageo@gmail.com'
         )
     }
