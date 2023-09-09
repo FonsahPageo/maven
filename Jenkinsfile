@@ -1,23 +1,23 @@
 node('built-in') 
 {
     stage('Continuous Download') 
-	{
-    git 'https://github.com/sunildevops77/maven.git'
-	}
+    {
+        git 'https://github.com/FonsahPageo/maven.git'
+    }
     stage('Continuous Build') 
-	{
-    sh label: '', script: 'mvn package'
-	}
-    stage('Continuous Deployment') 
-	{
-sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war   ubuntu@172.31.26.217:/var/lib/tomcat8/webapps/qaenv.war'
-	}
-    stage('Continuous Testing') 
-	{
-              sh label: '', script: 'echo "Testing Passed"'
-	}
+    {
+        sh 'mvn package'
+    }
+    stage('Continuous Deploy') 
+    {
+        sh 'scp /var/lib/jenkins/workspace/scriptedpipeline/webapp/target/webapp.war ubuntu@172.31.34.102:/var/lib/tomcat9/webapps/qaenv.war'
+    }
     stage('Continuous Delivery') 
-	{
-sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war   ubuntu@172.31.22.88:/var/lib/tomcat8/webapps/prodenv.war'
-	}
+    {
+        sh 'scp /var/lib/jenkins/workspace/scriptedpipeline/webapp/target/webapp.war ubuntu@172.31.41.225:/var/lib/tomcat9/webapps/prodenv.war'
+    }
+    stage("Email Notification")
+    {
+        mail bcc: '', body: 'Alert for scriptedpipeline job', cc: '', from: '', replyTo: '', subject: 'Scripted pipeline job', to: 'ashprincepageo@gmail.com'
+    }
 }
