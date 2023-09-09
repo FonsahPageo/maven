@@ -17,14 +17,14 @@ node('built-in')
         sh 'scp /var/lib/jenkins/workspace/scriptedpipeline/webapp/target/webapp.war ubuntu@172.31.41.225:/var/lib/tomcat9/webapps/prodenv.war'
     }
     stage("Email Notification")
-    {
+     {
         mail (
             bcc: '', 
-            body: "Working well",
+            body: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${currentBuild.currentResult}: Check console output at ${env.BUILD_URL} to view the results. This is an auto-generated email. Do not reply.",
             cc: '', 
             from: '', 
             replyTo: '', 
-            subject: "Jenkins Job Alert",
+            subject: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${currentBuild.currentResult}!",
             to: 'ashprincepageo@gmail.com'
         )
     }
