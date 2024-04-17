@@ -1,7 +1,2 @@
-New changes done by developer
-
-some more changes dondddddddeddd
-
-
-cccccc
+This is a CI/CD project done with Jenkins
 
