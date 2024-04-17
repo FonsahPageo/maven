@@ -18,7 +18,7 @@ node('built-in')
         sh 'scp /var/lib/jenkins/workspace/scriptedpipeline/webapp/target/webapp.war ubuntu@172.31.41.225:/var/lib/tomcat9/webapps/prodenv.war'
     }
     // This is to test the webhook integration
-    // This is to test the email notification integration
+    // This is to test the email notification integration for the second time
     stage("Email Notification")
      {
         mail (
