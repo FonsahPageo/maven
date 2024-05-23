@@ -6,7 +6,7 @@ node('built-in')
     }
     stage('Continuous Build') 
     {
-        sh 'mvn clean install'
+        sh 'mvn package'
     }
     stage('Continuous Deploy') 
     {
