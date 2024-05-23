@@ -220,7 +220,7 @@
   </scm>
 
   <prerequisites>
-    <maven>3.0.3</maven>
+    <maven>3.8.7</maven>
   </prerequisites>
 
 </project>
