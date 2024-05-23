@@ -55,6 +55,7 @@
       </plugin>
 
       <plugin>
+        <artifactId>maven-reporting-plugin</artifactId>
         <configuration>
           <reportPlugins>
             <plugin>
