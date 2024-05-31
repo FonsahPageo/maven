@@ -10,12 +10,12 @@ node('built-in')
     }
     stage('Continuous Deploy') 
     {
-        sh 'scp /var/lib/jenkins/workspace/scriptedpipeline/webapp/target/webapp.war ubuntu@172.31.14.231:/var/lib/tomcat9/webapps/qaenv.war' 
+        sh 'scp /var/lib/jenkins/workspace/scriptedpipeline/webapp/target/webapp.war ubuntu@172.31.31.212:/var/lib/tomcat9/webapps/qaenv.war' 
     }
     // replace ip with the private IP of the qa/prod server
     stage('Continuous Delivery') 
     {
-        sh 'scp /var/lib/jenkins/workspace/scriptedpipeline/webapp/target/webapp.war ubuntu@172.31.3.34:/var/lib/tomcat9/webapps/prodenv.war'
+        sh 'scp /var/lib/jenkins/workspace/scriptedpipeline/webapp/target/webapp.war ubuntu@172.31.31.61:/var/lib/tomcat9/webapps/prodenv.war'
     }
     stage("Email Notification")
      {
